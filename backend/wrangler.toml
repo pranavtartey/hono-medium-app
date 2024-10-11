@@ -1,0 +1,27 @@
+name = "hono-medium-app"
+main = "src/index.ts"
+compatibility_date = "2024-10-10"
+compatibility_flags = [ "nodejs_compat" ]
+
+[vars]
+DATABASE_URL = "prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiM2Y1ZTUxNzQtZDZkNC00NWQzLWJmZTYtOTUzZWIwY2FhNzAyIiwidGVuYW50X2lkIjoiMzhmZjcyM2E4M2FhNGM1NzFjNTUyYjgyYzRiYmE1ZTkyN2JhZGE5OGQ2ZTc1ZjZmNDA4M2Q5ZjcxYmQwNWE5OCIsImludGVybmFsX3NlY3JldCI6ImQ4YjFiNGU2LTZjM2UtNDA3NS1hYTBjLTJlMmQzYzRkOGUyZSJ9.0lAo_BVMfDG-afa8aDLtQ95teIPzt0QnxK0LMuWeteM"
+JWT_SECRET = "pranavjwtsecret"
+# [[kv_namespaces]]
+# binding = "MY_KV_NAMESPACE"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# [[r2_buckets]]
+# binding = "MY_BUCKET"
+# bucket_name = "my-bucket"
+
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "my-database"
+# database_id = ""
+
+# [ai]
+# binding = "AI"
+
+# [observability]
+# enabled = true
+# head_sampling_rate = 1
