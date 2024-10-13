@@ -35,11 +35,11 @@ blogRouter.use("/*", async (context, next) => {
 blogRouter.post("/", async (context) => {
     try {
         const body = await context.req.json();
-        const {success} = createBlogInput.safeParse(body);
-        if(!success) {
+        const { success } = createBlogInput.safeParse(body);
+        if (!success) {
             context.status(411);
             return context.json({
-                message : "create blog inputs are not correct"
+                message: "create blog inputs are not correct"
             })
         }
 
@@ -73,11 +73,11 @@ blogRouter.post("/", async (context) => {
 blogRouter.put("/", async (context) => {
     try {
         const body = await context.req.json();
-        const {success} = updateBlogInput.safeParse(body);
-        if(!success) {
+        const { success } = updateBlogInput.safeParse(body);
+        if (!success) {
             context.status(411);
             return context.json({
-                message : "update blog inputs are not correct"
+                message: "update blog inputs are not correct"
             })
         }
         const prisma = new PrismaClient({
@@ -113,7 +113,18 @@ blogRouter.get("/bulk", async (context) => {
     const prisma = new PrismaClient({
         datasourceUrl: context.env.DATABASE_URL
     }).$extends(withAccelerate());
-    const blogs = await prisma.blog.findMany();
+    const blogs = await prisma.blog.findMany({
+        select: {
+            content: true,
+            title: true,
+            id: true,
+            author: {
+                select: {
+                    name: true
+                }
+            }
+        }
+    });
 
     return context.json({
         blogs
@@ -131,6 +142,16 @@ blogRouter.get("/:id", async (context) => {
         const blog = await prisma.blog.findFirst({
             where: {
                 id: Number(id)
+            },
+            select: {
+                id: true,
+                title: true,
+                content: true,
+                author: {
+                    select: {
+                        name: true
+                    }
+                }
             }
         })
 

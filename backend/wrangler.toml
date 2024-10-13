@@ -4,8 +4,8 @@ compatibility_date = "2024-10-10"
 compatibility_flags = [ "nodejs_compat" ]
 
 [vars]
-DATABASE_URL = "prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiM2Y1ZTUxNzQtZDZkNC00NWQzLWJmZTYtOTUzZWIwY2FhNzAyIiwidGVuYW50X2lkIjoiMzhmZjcyM2E4M2FhNGM1NzFjNTUyYjgyYzRiYmE1ZTkyN2JhZGE5OGQ2ZTc1ZjZmNDA4M2Q5ZjcxYmQwNWE5OCIsImludGVybmFsX3NlY3JldCI6ImQ4YjFiNGU2LTZjM2UtNDA3NS1hYTBjLTJlMmQzYzRkOGUyZSJ9.0lAo_BVMfDG-afa8aDLtQ95teIPzt0QnxK0LMuWeteM"
-JWT_SECRET = "pranavjwtsecret"
+DATABASE_URL = "<ADD YOUR POOLING URL FOR YOUR WORKER>"
+JWT_SECRET = "<ADD A SECRET FOR YOUR JWT>"
 # [[kv_namespaces]]
 # binding = "MY_KV_NAMESPACE"
 # id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
